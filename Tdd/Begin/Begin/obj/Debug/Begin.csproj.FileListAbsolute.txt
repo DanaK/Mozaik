@@ -1,0 +1,8 @@
+c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\bin\Debug\Begin.exe.config
+c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\bin\Debug\Begin.exe
+c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\bin\Debug\Begin.pdb
+c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\obj\Debug\Begin.csprojResolveAssemblyReference.cache
+c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\obj\Debug\Begin.Properties.Resources.resources
+c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\obj\Debug\Begin.csproj.GenerateResource.Cache
+c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\obj\Debug\Begin.exe
+c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\obj\Debug\Begin.pdb
