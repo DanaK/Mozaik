@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Begin
 {
+
+    // Класс главной формы, размещает на себе элементы
+    // управления - панель, прямоугольники PictureBox и возможно другие.
     public partial class Form1 : Form
     {
         public Form1()
@@ -185,14 +188,62 @@ namespace Begin
             if (ofDlg.ShowDialog() == DialogResult.OK)
             {
                 // Загружаем выбранную картинку.
-              //  Picture = new Bitmap(ofDlg.FileName);
+                Picture = new Bitmap(ofDlg.FileName);
                 // Создаем новую область прорисовки.
-               // CreatePictureRegion();
+                CreatePictureRegion();
             }
         }
         private void toolStripButtonLoadPicture_Click(object sender, EventArgs e)
         {
             MyPicture();
+        }
+        // Перемешивание прямоугольников, хаотично меняем их координаты. 
+        public void MyMix()
+        {
+            if (Picture == null) return;
+
+            // Создаем объект генерирования псевослучайных чисел,
+            // для различного набора случайных чисел инициализацию
+            // объекта Random производим от счетчика количества
+            // миллисекунд прошедших со времени запуска операционной системы.
+            Random rand = new Random(Environment.TickCount);
+            int r = 0;
+            for (int i = 0; i < PB.Length; i++)
+            {
+                PB[i].Visible = true;
+                r = rand.Next(0, PB.Length);
+                Point ptR = PB[r].Location;
+                Point ptI = PB[i].Location;
+                PB[i].Location = ptR;
+                PB[r].Location = ptI;
+                PB[i].BorderStyle = BorderStyle.FixedSingle;
+            }
+
+            // Случайным образом выбираем пустой прямоугольник,
+            // делаем его невидимым.
+            r = rand.Next(0, PB.Length);
+            PB[r].Visible = false;
+        }
+        // В каждом прямоугольнике будет хранится соответствующий
+        // сегмент картинки.
+        private void toolStripButtonMixed_Click(object sender, EventArgs e)
+        {
+            MyMix();
+        }
+
+        // Восстанавливаем картинку соответсвенно первичным координатам. 
+        public void MyRestore()
+        {
+            for (int i = 0; i < PB.Length; i++)
+            {
+                Point pt = (Point)PB[i].Tag;
+                PB[i].Location = pt;
+                PB[i].Visible = true;
+            }
+        }
+        private void toolStripButtonRestore_Click(object sender, EventArgs e)
+        {
+            MyRestore();
         }
     }
 }

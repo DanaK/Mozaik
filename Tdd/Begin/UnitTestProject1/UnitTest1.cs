@@ -33,6 +33,25 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        public void TestMyRestore()
+        {
+            Bitmap Picture = null;
+            if (Picture == null) return;
+            Form1 ff = new Form1();
+            int i = 0;
+            PictureBox[] PB = null;
+            PB = ff.PB;
+            for (i = 0; i < PB.Length; i++)
+            {
+                Point pt = (Point)PB[i].Tag;
+                PB[i].Location = pt;
+                PB[i].Visible = true;
+            }
+            if (PB[i].Visible == false)
+                Assert.Fail("Мозаику не удалось восстановить!");
+        }
+
+        [TestMethod]
         public void TestDrawPicture()
         {
             Form1 ff = new Form1();
@@ -48,6 +67,41 @@ namespace UnitTestProject1
                 countY1++;
             }
             if (countX1 == 0)
+                Assert.Fail("Мозаика не может быть собрана!");
+        }
+
+        [TestMethod]
+        public void TestMyMix()
+        {
+            // Объект хранения картинки.
+            Bitmap Picture = null;
+
+            Form1 ff = new Form1();
+            PictureBox[] PB = null;
+            PB = ff.PB;
+            if (Picture == null) return;
+            // Создаем объект генерирования псевослучайных чисел,
+            // для различного набора случайных чисел инициализацию
+            // объекта Random производим от счетчика количества
+            // миллисекунд прошедших со времени запуска операционной системы.
+            Random rand = new Random(Environment.TickCount);
+            int r = 0;
+            for (int i = 0; i < PB.Length; i++)
+            {
+                PB[i].Visible = true;
+                r = rand.Next(0, PB.Length);
+                Point ptR = PB[r].Location;
+                Point ptI = PB[i].Location;
+                PB[i].Location = ptR;
+                PB[r].Location = ptI;
+                PB[i].BorderStyle = BorderStyle.FixedSingle;
+            }
+
+            // Случайным образом выбираем пустой прямоугольник,
+            // делаем его невидимым.
+            r = rand.Next(0, PB.Length);
+            PB[r].Visible = false;
+            if (PB[1].Visible == false)
                 Assert.Fail("Мозаика не может быть собрана!");
         } 
     }

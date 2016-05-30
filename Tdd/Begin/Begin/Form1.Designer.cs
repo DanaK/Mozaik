@@ -80,6 +80,7 @@
             this.toolStripButtonMixed.Name = "toolStripButtonMixed";
             this.toolStripButtonMixed.Size = new System.Drawing.Size(82, 22);
             this.toolStripButtonMixed.Text = "Перемешать";
+            this.toolStripButtonMixed.Click += new System.EventHandler(this.toolStripButtonMixed_Click);
             // 
             // toolStripButtonRestore
             // 
@@ -88,6 +89,7 @@
             this.toolStripButtonRestore.Name = "toolStripButtonRestore";
             this.toolStripButtonRestore.Size = new System.Drawing.Size(86, 22);
             this.toolStripButtonRestore.Text = "Восстановить";
+            this.toolStripButtonRestore.Click += new System.EventHandler(this.toolStripButtonRestore_Click);
             // 
             // toolStripButtonSetting
             // 
