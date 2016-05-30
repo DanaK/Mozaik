@@ -108,6 +108,7 @@
             this.toolStripButtonHelp.Name = "toolStripButtonHelp";
             this.toolStripButtonHelp.Size = new System.Drawing.Size(60, 22);
             this.toolStripButtonHelp.Text = "Помощь";
+            this.toolStripButtonHelp.Click += new System.EventHandler(this.toolStripButtonHelp_Click);
             // 
             // Form1
             // 

@@ -8,3 +8,4 @@ c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\obj\Debug\Be
 c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\obj\Debug\Begin.pdb
 c:\users\дана\documents\visual studio 2013\Projects\Begin\Begin\obj\Debug\Begin.Form1.resources
 C:\Users\Дана\Documents\Visual Studio 2013\Projects\Begin\Begin\obj\Debug\Begin.SetDlg.resources
+C:\Users\Дана\Documents\Visual Studio 2013\Projects\Begin\Begin\obj\Debug\Begin.HelpDlg.resources

@@ -95,11 +95,41 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        public void TestLoadPicture()
+        {
+            Form1 ff = new Form1();
+            Bitmap Picture = null;
+            OpenFileDialog ofDlg = new OpenFileDialog();
+            ofDlg.RestoreDirectory = true;
+            if (ofDlg.ShowDialog() != DialogResult.OK)
+             Assert.Fail("Вы не выбрали картинку!");
+        }
+
+        [TestMethod]
         public void TestSetDlg()
         {
             SetDlg ff = new SetDlg();
             if (ff.ShowDialog() != DialogResult.OK)
                 Assert.Fail("Непредвиденная ошибка! Кнопка 'Ок' не работает.");
+        }
+
+        [TestMethod]
+        public void TestSetDlgNum()
+        {
+            SetDlg ff = new SetDlg();
+            if (ff.LengthSides <= 2)
+                Assert.Fail("Маленькое значение для мозаики");
+        }
+
+        [TestMethod]
+        public void TestHelp()
+        {
+            HelpDlg ff = new HelpDlg();
+            ff.ShowDialog();
+            if (ff.ControlBox != true) 
+            //    Assert.IsNull(ff.ShowDialog());
+            //else
+                Assert.Fail("Непредвиденная ошибка! Кнопка 'X' не работает.");
         }
     }
 }

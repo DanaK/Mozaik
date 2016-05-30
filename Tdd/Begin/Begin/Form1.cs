@@ -94,7 +94,7 @@ namespace Begin
       
         public void DrawPicture()
         {
-            if (Picture == null) return;
+            if (Picture == null)  return;
             int countX = 0;
             int countY = 0;
             int num = LengthSides;
@@ -260,6 +260,18 @@ namespace Begin
         private void toolStripButtonSetting_Click(object sender, EventArgs e)
         {
             MyProperties();
+        }
+        // Открываем диалоговое окно с нормальным видо картинки,
+        // для освежения памяти пользователя.
+        public void MyHelp()
+        {
+            HelpDlg helpDlg = new HelpDlg();
+            helpDlg.ImageDuplicate = Picture;
+            helpDlg.ShowDialog();
+        }
+        private void toolStripButtonHelp_Click(object sender, EventArgs e)
+        {
+            MyHelp();
         }
     }
 }
