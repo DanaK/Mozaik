@@ -98,6 +98,7 @@
             this.toolStripButtonSetting.Name = "toolStripButtonSetting";
             this.toolStripButtonSetting.Size = new System.Drawing.Size(71, 22);
             this.toolStripButtonSetting.Text = "Настройки";
+            this.toolStripButtonSetting.Click += new System.EventHandler(this.toolStripButtonSetting_Click);
             // 
             // toolStripButtonHelp
             // 

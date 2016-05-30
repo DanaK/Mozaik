@@ -245,5 +245,21 @@ namespace Begin
         {
             MyRestore();
         }
+        
+        // Открываем диалоговое окно настроек приложения.
+        public void MyProperties()
+        {
+            SetDlg setDlg = new SetDlg();
+            setDlg.LengthSides = LengthSides;
+            if (setDlg.ShowDialog() == DialogResult.OK)
+            {
+                LengthSides = setDlg.LengthSides;
+                CreatePictureRegion();
+            }
+        }
+        private void toolStripButtonSetting_Click(object sender, EventArgs e)
+        {
+            MyProperties();
+        }
     }
 }

@@ -86,23 +86,20 @@ namespace UnitTestProject1
             // миллисекунд прошедших со времени запуска операционной системы.
             Random rand = new Random(Environment.TickCount);
             int r = 0;
-            for (int i = 0; i < PB.Length; i++)
-            {
-                PB[i].Visible = true;
-                r = rand.Next(0, PB.Length);
-                Point ptR = PB[r].Location;
-                Point ptI = PB[i].Location;
-                PB[i].Location = ptR;
-                PB[r].Location = ptI;
-                PB[i].BorderStyle = BorderStyle.FixedSingle;
-            }
-
             // Случайным образом выбираем пустой прямоугольник,
             // делаем его невидимым.
             r = rand.Next(0, PB.Length);
             PB[r].Visible = false;
             if (PB[1].Visible == false)
                 Assert.Fail("Мозаика не может быть собрана!");
-        } 
+        }
+
+        [TestMethod]
+        public void TestSetDlg()
+        {
+            SetDlg ff = new SetDlg();
+            if (ff.ShowDialog() != DialogResult.OK)
+                Assert.Fail("Непредвиденная ошибка! Кнопка 'Ок' не работает.");
+        }
     }
 }
